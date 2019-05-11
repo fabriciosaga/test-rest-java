@@ -10,4 +10,6 @@ public interface UserService {
 
 	User getUser(Integer id);
 
+	User setUser(User user);
+
 }
