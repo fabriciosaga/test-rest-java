@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,8 +38,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/user")	
-	public User setUser(@RequestBody User user) {
+	User setUser(@RequestBody User user) {
 		logger.info("Setting user: " + user.getId());
 		return userService.setUser(user);
+	}
+	
+	@PutMapping("/updateUser")
+	User updateUser(@RequestBody User user) {
+		logger.info("updating user: " + user.getId());
+		return userService.updateUser(user);
 	}
 }

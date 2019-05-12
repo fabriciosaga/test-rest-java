@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 		if(list == null || list.isEmpty()) {
 			list = new ArrayList<>();
 			
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 3; i++) {
 				User user = new User();
 				user.setId(i);
 				user.setName("Name " + i);
@@ -56,6 +56,15 @@ public class UserServiceImpl implements UserService {
 		list.add(user);
 		
 		return user;
+	}
+
+	@Override
+	public User updateUser(User user) {
+		
+		User user2 = getUser(user.getId());
+		user2.setName(user.getName());
+		
+		return user2;
 	}
 	
 

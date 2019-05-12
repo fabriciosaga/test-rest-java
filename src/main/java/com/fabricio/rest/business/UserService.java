@@ -12,4 +12,6 @@ public interface UserService {
 
 	User setUser(User user);
 
+	User updateUser(User user);
+
 }
